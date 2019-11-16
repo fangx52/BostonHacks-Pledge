@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pledge</string>
+    <string name="add_pledge_hint"> </string>
+    <string-array name="add_pledge_category">
+        <item>Recycling</item>
+        <item>Food Waste</item>
+        <item>Gas Consumption</item>
+        <item>Plastic Waste</item>
+    </string-array>
+    <string-array name="add_pledge_pledge" />
+
+</resources>
