@@ -11,14 +11,14 @@ public class PledgeItem {
     private int id;
     private String category;
     private String pledge;
-    private Date startDate;
-    private Date endDate;
+    private String startDate;
+    private String endDate;
     private String penalty;
-    private ArrayList<String> phoneNumbers;
+    private ArrayList<Integer> phoneNumbers;
 
     // Constructor for PledgeItem object.
 
-    public PledgeItem(int id, String category, String pledge, Date startDate, Date endDate, String penalty, ArrayList<String> phoneNumbers) {
+    public PledgeItem(int id, String category, String pledge, String startDate, String endDate, String penalty, ArrayList<Integer> phoneNumbers) {
 
         this.id = id;
         this.category = category;
@@ -53,19 +53,19 @@ public class PledgeItem {
         this.pledge = pledge;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -77,11 +77,11 @@ public class PledgeItem {
         this.penalty = penalty;
     }
 
-    public ArrayList<String> getPhoneNumbers() {
+    public ArrayList<Integer> getPhoneNumbers() {
         return phoneNumbers;
     }
 
-    public void setPhoneNumbers(ArrayList<String> phoneNumbers) {
+    public void setPhoneNumbers(ArrayList<Integer> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
     }
 
