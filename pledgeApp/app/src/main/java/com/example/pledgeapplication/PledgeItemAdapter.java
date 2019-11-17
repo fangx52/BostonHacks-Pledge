@@ -24,6 +24,7 @@ public class PledgeItemAdapter extends
         public TextView categoryView;
         public TextView pledgeView;
         public TextView endDateView;
+        public TextView pentaltyView;
         PledgeItemAdapter mAdapter;
 
 
@@ -32,6 +33,7 @@ public class PledgeItemAdapter extends
             categoryView = itemView.findViewById(R.id.card_category);
             pledgeView = itemView.findViewById(R.id.card_pledge);
             endDateView = itemView.findViewById(R.id.card_enddate);
+            pentaltyView = itemView.findViewById(R.id.card_pentalty);
             this.mAdapter = adapter;
         }
 
@@ -40,6 +42,7 @@ public class PledgeItemAdapter extends
             categoryView.setText(currentItem.getCategory());
             pledgeView.setText(currentItem.getPledge());
             endDateView.setText(currentItem.getEndDate());
+            pentaltyView.setText(currentItem.getPenalty());
         }
     }
 
