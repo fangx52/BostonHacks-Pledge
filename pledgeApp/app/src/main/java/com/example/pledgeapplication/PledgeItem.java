@@ -17,7 +17,7 @@ public class PledgeItem {
 
     // Constructor for PledgeItem object.
 
-
+    public  PledgeItem(){}
     public PledgeItem(String id, String category, String pledge, String startDate, String endDate, String penalty) {
 
         this.id = id;
