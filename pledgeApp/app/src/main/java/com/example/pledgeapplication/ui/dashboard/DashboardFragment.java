@@ -53,8 +53,12 @@ public class DashboardFragment extends Fragment {
         ArrayList<DashboardItem> allDashboards = new ArrayList<DashboardItem>();
         DashboardItem d1 = new DashboardItem("Elton rode the bus instead of driving to work all month.");
         DashboardItem d2 = new DashboardItem("Andrew didn't use plastic cups for a week.");
+        DashboardItem d3 = new DashboardItem("Jane used reusable straws for a week!");
+        DashboardItem d4 = new DashboardItem("Sophie took fast 5 minute cold showers for one year");
         allDashboards.add(d1);
         allDashboards.add(d2);
+        allDashboards.add(d3);
+        allDashboards.add(d4);
         return allDashboards;
     }
 
