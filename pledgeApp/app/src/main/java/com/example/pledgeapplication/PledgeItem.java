@@ -2,13 +2,12 @@ package com.example.pledgeapplication;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class PledgeItem {
 
     // Member variables representing properties of a pledge.
 
-    private int id;
+    private String id;
     private String category;
     private String pledge;
     private String startDate;
@@ -18,7 +17,8 @@ public class PledgeItem {
 
     // Constructor for PledgeItem object.
 
-    public PledgeItem(int id, String category, String pledge, String startDate, String endDate, String penalty, ArrayList<Integer> phoneNumbers) {
+
+    public PledgeItem(String id, String category, String pledge, String startDate, String endDate, String penalty) {
 
         this.id = id;
         this.category = category;
@@ -26,14 +26,14 @@ public class PledgeItem {
         this.startDate = startDate;
         this.endDate = endDate;
         this.penalty = penalty;
-        this.phoneNumbers = phoneNumbers;
+        //this.phoneNumbers = phoneNumbers;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -77,13 +77,8 @@ public class PledgeItem {
         this.penalty = penalty;
     }
 
-    public ArrayList<Integer> getPhoneNumbers() {
-        return phoneNumbers;
-    }
 
-    public void setPhoneNumbers(ArrayList<Integer> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
-    }
+
 
 }
 
