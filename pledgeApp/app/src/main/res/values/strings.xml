@@ -13,6 +13,8 @@
     <string name="title_pledge">Pledge</string>
     <string name="title_feed">Feed</string>
     <string name="title_discover">Discover</string>
+    <string name="invite">Invite Friends</string>
+    <string name="group">Your friend\'s number!</string>
     <string-array name="add_pledge_category">
         <item>Recycling</item>
         <item>Food Waste</item>
