@@ -2,6 +2,7 @@ package com.example.pledgeapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -40,28 +41,32 @@ public class AddPledgeActivity extends AppCompatActivity{
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 addPledge();
-
+                launchMainActivity();
             }
         });
         //buttonAdd=(Button) findViewById(R.id.addPledge);
     }
-    private void addPledge(){
-        String category=spinnerCategories.getSelectedItem().toString();
-        String pledge=pledgeInput.getText().toString().trim();
-        String start=startDate.getText().toString().trim();
-        String end=endDate.getText().toString().trim();
-        String penal=penalty.getText().toString().trim();
-        if (!TextUtils.isEmpty(category)){
-            String id=databasePledge.push().getKey();
-            PledgeItem pledges=new PledgeItem(id, category,pledge,start,end,penal);
+    private void addPledge() {
+        String category = spinnerCategories.getSelectedItem().toString();
+        String pledge = pledgeInput.getText().toString().trim();
+        String start = startDate.getText().toString().trim();
+        String end = endDate.getText().toString().trim();
+        String penal = penalty.getText().toString().trim();
+        if (!TextUtils.isEmpty(category)|| !TextUtils.isEmpty(pledge)||!TextUtils.isEmpty(start)||!TextUtils.isEmpty(end)||!TextUtils.isEmpty(penal)) {
+            String id = databasePledge.push().getKey();
+            PledgeItem pledges = new PledgeItem(id, category, pledge, start, end, penal);
             databasePledge.child(id).setValue(pledges);
-            Toast.makeText(this,"Pledge Added",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Pledge Added", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Please fill out all the fields.", Toast.LENGTH_LONG).show();
         }
-        else{
-            Toast.makeText(this,"Please input a category",Toast.LENGTH_LONG).show();
-        }
+    }
 
+    private void launchMainActivity() {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
     }
 
-}
+

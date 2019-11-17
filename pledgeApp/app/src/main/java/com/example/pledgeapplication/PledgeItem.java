@@ -13,9 +13,10 @@ public class PledgeItem {
     private String startDate;
     private String endDate;
     private String penalty;
-    private ArrayList<String> phoneNumbers;
+    private ArrayList<Integer> phoneNumbers;
 
     // Constructor for PledgeItem object.
+
 
     public PledgeItem(String id, String category, String pledge, String startDate, String endDate, String penalty) {
 
@@ -76,13 +77,8 @@ public class PledgeItem {
         this.penalty = penalty;
     }
 
-//    public ArrayList<String> getPhoneNumbers() {
-//        return phoneNumbers;
-//    }
 
-//    public void setPhoneNumbers(ArrayList<String> phoneNumbers) {
-//        this.phoneNumbers = phoneNumbers;
-//    }
+
 
 }
 
