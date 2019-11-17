@@ -25,11 +25,13 @@ public class AddPledgeActivity extends AppCompatActivity{
     EditText penalty;
     FloatingActionButton buttonAdd;
     DatabaseReference databasePledge;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_pledge);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
         databasePledge= FirebaseDatabase.getInstance().getReference("pledge");
 
         spinnerCategories=(Spinner) findViewById(R.id.category);
