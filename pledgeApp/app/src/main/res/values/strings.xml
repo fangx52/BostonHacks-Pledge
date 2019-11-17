@@ -12,7 +12,7 @@
     <string name="title_feed">Feed</string>
     <string name="title_discover">Discover</string>
 
-    <string-array  name="add_pledge_category">
+    <string-array name="add_pledge_category">
         <item name="android:textStyle" >Recycling</item>
         <item >Food Waste</item>
         <item >Gas Consumption</item>
