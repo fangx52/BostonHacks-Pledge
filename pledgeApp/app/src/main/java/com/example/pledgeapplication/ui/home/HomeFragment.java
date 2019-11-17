@@ -22,6 +22,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pledgeapplication.PledgeItem;
 import com.example.pledgeapplication.PledgeItemAdapter;
 import com.example.pledgeapplication.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -31,12 +36,15 @@ public class HomeFragment extends Fragment {
 
     private PledgeItemAdapter mAdapter;
     private RecyclerView recyclerView;
+    DatabaseReference databasePledge;
+    private ArrayList<PledgeItem> pledgeList;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         // get a reference to recyclerView
+        databasePledge= FirebaseDatabase.getInstance().getReference("pledge");
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = rootView.findViewById(R.id.recyclerview);
         //RecyclerView recyclerView = new RecyclerView(getContext());
@@ -44,18 +52,43 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
         // create an adapter
-        ArrayList<PledgeItem> allPledges = initPledgeArray();
-        mAdapter = new PledgeItemAdapter(getContext(), allPledges);
+//        ArrayList<PledgeItem> allPledges = initPledgeArray();
+//        mAdapter = new PledgeItemAdapter(getContext(), allPledges);
 
-        recyclerView.setAdapter(mAdapter);
-        mAdapter.notifyDataSetChanged();
+//        recyclerView.setAdapter(mAdapter);
+//        mAdapter.notifyDataSetChanged();
 
 //
         // set item animator to default animator
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        pledgeList = new ArrayList<>();
         return rootView;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        databasePledge.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                pledgeList.clear();
+                for (DataSnapshot pledgeSnap : dataSnapshot.getChildren()) {
+                    PledgeItem pledge = pledgeSnap.getValue(PledgeItem.class);
+                    pledgeList.add(pledge);
+                }
+
+                PledgeItemAdapter adapter = new PledgeItemAdapter(getContext(), pledgeList);
+                recyclerView.setAdapter(adapter);
+            }
+
+                @Override
+                public void onCancelled (@NonNull DatabaseError databaseError){
+
+                }
+            }
+        );
+        }
+
 
     // initializes the data - pledge arrays
     public ArrayList<PledgeItem> initPledgeArray() {
