@@ -8,15 +8,17 @@
     <string name="add_pledge_suggestion">Today\'s Suggestion: I pledge not to eat takeouts.</string>
     <string name="add_pledge_penalty_text">If I don\'t complete this pledge, I will: </string>
     <string name="add_pledge_penalty_hint">Donate $10 to charity. </string>
-    <string name="title_pledge">Pledge</string>
-    <string name="title_feed">Feed</string>
-    <string name="title_discover">Discover</string>
 
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_feeds">Feed</string>
     <string-array name="add_pledge_category">
-        <item name="android:textStyle" >Recycling</item>
-        <item >Food Waste</item>
-        <item >Gas Consumption</item>
-        <item >Plastic Waste</item>
+        <item>Recycling</item>
+        <item>Food Waste</item>
+        <item>Gas Consumption</item>
+        <item>Plastic Waste</item>
     </string-array>
     <string-array name="add_pledge_pledge" />
 
