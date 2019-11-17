@@ -60,7 +60,7 @@ public class DiscoverFragment extends Fragment {
         DiscoverItem dd3 = new DiscoverItem("Online",
                 "#TeamTrees", "Help us plant 20 million trees around the globe by January 1st 2020.", "Now until 2020", "teamtrees.org");
         DiscoverItem dd4 = new DiscoverItem("Boston, MA",
-                "Boston Sustainability Breakfast", "Join us every month for Net Impact Boston's informal breakfast meetup of sustainability professionals for networking, discussion, and moral support. ", "11.20.19", "https://www.eventbrite.com/e/boston-sustainability-breakfast-tickets-72997402195");
+                "Boston Sustainability Breakfast", "Join us every month for Net Impact Boston's informal breakfast meetup of sustainability professionals. ", "11.20.19", "https://www.eventbrite.com/e/boston-sustainability-breakfast-tickets-72997402195");
         allDiscover.add(dd1);
         allDiscover.add(dd2);
         allDiscover.add(dd3);

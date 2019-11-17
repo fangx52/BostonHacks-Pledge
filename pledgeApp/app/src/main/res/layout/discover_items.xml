@@ -9,8 +9,8 @@
     android:layout_margin="8dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="240dp">
+        android:layout_width="375dp"
+        android:layout_height="421dp">
 
         <TextView
             android:id="@+id/location_text"
@@ -42,6 +42,7 @@
             android:layout_below="@id/title_text"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="21dp"
             android:padding="8dp"
             android:text="Placeholder"
             android:textColor="@android:color/black"
@@ -54,7 +55,7 @@
             android:layout_below="@id/info_text"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="28dp"
             android:padding="8dp"
             android:text="Placeholder"
             android:textColor="@android:color/black"
@@ -67,7 +68,7 @@
             android:layout_below="@id/link_text"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="29dp"
             android:padding="8dp"
             android:text="Placeholder"
             android:textColor="@android:color/black"
