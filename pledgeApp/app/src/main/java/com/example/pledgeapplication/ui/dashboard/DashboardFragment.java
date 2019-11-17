@@ -6,64 +6,56 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pledgeapplication.R;
+
+import java.util.ArrayList;
+
 
 public class DashboardFragment extends Fragment {
-    String[] strings = {"Your Friend Has Completed So-And-So Activity",
-            "Your Friend Has Pledged So-And-So Activity",
-            "Your Friend Has Volunteered So-And-So Activity",
-            "Your Friend Has Completed So-And-So Activity"};
 
-    public DashboardFragment() {}
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        RecyclerView rv = new RecyclerView(getContext());
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv.setAdapter(new SimpleRVAdapter(strings));
-        return rv;
+    private DashboardItemAdapter mAdapter;
+    private RecyclerView recyclerView;
+
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+
+        // get a reference to recyclerView
+        View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        recyclerView = rootView.findViewById(R.id.dashrecyclerview);
+        //RecyclerView recyclerView = new RecyclerView(getContext());
+        // set layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        // create an adapter
+        ArrayList<DashboardItem> allDashboards = initDashboardArray();
+        mAdapter = new DashboardItemAdapter(getContext(), allDashboards);
+
+        recyclerView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
+//
+        // set item animator to default animator
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        return rootView;
     }
 
-    /**
-     * A Simple Adapter for the RecyclerView
-     */
-    public class SimpleRVAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
-        private String[] dataSource;
-        public SimpleRVAdapter(String[] dataArgs){
-            dataSource = dataArgs;
-        }
-
-        @Override
-        public SimpleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = new TextView(parent.getContext());
-            SimpleViewHolder viewHolder = new SimpleViewHolder(view);
-            return viewHolder;
-        }
-
-        @Override
-        public void onBindViewHolder(SimpleViewHolder holder, int position) {
-            holder.textView.setTextSize(24);
-            holder.textView.setTextIsSelectable(true);
-            holder.textView.setText(dataSource[position]);
-        }
-
-        @Override
-        public int getItemCount() {
-            return dataSource.length;
-        }
+    // initializes the data - dashboard arrays
+    public ArrayList<DashboardItem> initDashboardArray() {
+        ArrayList<DashboardItem> allDashboards = new ArrayList<DashboardItem>();
+        DashboardItem d1 = new DashboardItem("Elton rode the bus instead of driving to work all month.");
+        DashboardItem d2 = new DashboardItem("Andrew didn't use plastic cups for a week.");
+        allDashboards.add(d1);
+        allDashboards.add(d2);
+        return allDashboards;
     }
 
-    /**
-     * A Simple ViewHolder for the RecyclerView
-     */
-    public static class SimpleViewHolder extends RecyclerView.ViewHolder{
-        public TextView textView;
-        public SimpleViewHolder(View itemView) {
-            super(itemView);
-            textView = (TextView) itemView;
-        }
-    }
 }

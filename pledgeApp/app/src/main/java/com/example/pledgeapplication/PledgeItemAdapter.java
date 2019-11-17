@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class PledgeItemAdapter extends
         RecyclerView.Adapter<PledgeItemAdapter.PledgeViewHolder> {
     // member variables
-        private LayoutInflater mInflater;
-        private ArrayList<PledgeItem> pledgeArray;
-        private Context mContext;
+    private LayoutInflater mInflater;
+    private ArrayList<PledgeItem> pledgeArray;
+    private Context mContext;
 
     class PledgeViewHolder extends RecyclerView.ViewHolder {
 
@@ -70,4 +70,3 @@ public class PledgeItemAdapter extends
         return pledgeArray.size();
     }
 }
-
