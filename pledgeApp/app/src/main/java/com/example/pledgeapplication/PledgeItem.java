@@ -2,23 +2,22 @@ package com.example.pledgeapplication;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class PledgeItem {
 
     // Member variables representing properties of a pledge.
 
-    private int id;
+    private String id;
     private String category;
     private String pledge;
-    private Date startDate;
-    private Date endDate;
+    private String startDate;
+    private String endDate;
     private String penalty;
     private ArrayList<String> phoneNumbers;
 
     // Constructor for PledgeItem object.
 
-    public PledgeItem(int id, String category, String pledge, Date startDate, Date endDate, String penalty, ArrayList<String> phoneNumbers) {
+    public PledgeItem(String id, String category, String pledge, String startDate, String endDate, String penalty) {
 
         this.id = id;
         this.category = category;
@@ -26,14 +25,14 @@ public class PledgeItem {
         this.startDate = startDate;
         this.endDate = endDate;
         this.penalty = penalty;
-        this.phoneNumbers = phoneNumbers;
+        //this.phoneNumbers = phoneNumbers;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -53,19 +52,19 @@ public class PledgeItem {
         this.pledge = pledge;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -77,13 +76,13 @@ public class PledgeItem {
         this.penalty = penalty;
     }
 
-    public ArrayList<String> getPhoneNumbers() {
-        return phoneNumbers;
-    }
+//    public ArrayList<String> getPhoneNumbers() {
+//        return phoneNumbers;
+//    }
 
-    public void setPhoneNumbers(ArrayList<String> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
-    }
+//    public void setPhoneNumbers(ArrayList<String> phoneNumbers) {
+//        this.phoneNumbers = phoneNumbers;
+//    }
 
 }
 
