@@ -195,32 +195,11 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
 
-        android:clickable="true"
         app:backgroundTint="#C4D7F2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:src="@drawable/ic_action_name" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:backgroundTint="#91A8A4"
-        app:src="@drawable/ic_action_name"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="535dp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
