@@ -10,10 +10,9 @@
     <string name="add_pledge_penalty_hint">Donate $10 to charity. </string>
 
 
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_feeds">Feed</string>
+    <string name="title_pledge">Pledge</string>
+    <string name="title_feed">Feed</string>
+    <string name="title_discover">Discover</string>
     <string-array name="add_pledge_category">
         <item>Recycling</item>
         <item>Food Waste</item>
